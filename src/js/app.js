@@ -3,21 +3,19 @@ import "../scss/app.scss";
 window.addEventListener("DOMContentLoaded", () => {
   // This block will be executed once the page is loaded and ready
 
-  const button = document.querySelector(".button");
-  button.addEventListener("click", () => {
-    const body = document.body;
+  document.body.addEventListener("click", () => {
+    const length = 5;
+    let count = 0;
+    for(let i = 0; i < length; i++) {
+      let element = document.createElement('article');
 
-    body.addEventListener('click', function() {
-      for (let i = 0; i < 5; i++) {
-        const message = document.createElement('article');
-        message.classList.add('message');
-        message.innerText = 'Sample message ' + (i + 1);
-        body.appendChild(message);
-      }
+      count += length;
+      element.setAttribute('id', 'article' + count);
+      document.body.appendChild(element);
+      let text = 'sampleText';
+      document.getElementById('article' + count).innerHTML = text;
+      document.getElementById('article' + count).classList.add('message');
+    }
+
     });
-    
-
-    
-    alert("💣");
-  });
 });
