@@ -5,21 +5,19 @@ window.addEventListener("DOMContentLoaded", () => {
 
   const button = document.querySelector(".button");
   button.addEventListener("click", () => {
-    // create a container element
-const container = document.createElement("div");
+    const body = document.body;
 
-// create the five article elements
-for (let i = 0; i < 5; i++) {
-  const article = document.createElement("article");
-  article.className.add("message");
-  container.appendChild(article);
-}
+    body.addEventListener('click', function() {
+      for (let i = 0; i < 5; i++) {
+        const message = document.createElement('article');
+        message.classList.add('message');
+        message.innerText = 'Sample message ' + (i + 1);
+        body.appendChild(message);
+      }
+    });
+    
 
-// append the container element to the body
-document.body.appendChild(container);
-
-
-
+    
     alert("💣");
   });
 });
