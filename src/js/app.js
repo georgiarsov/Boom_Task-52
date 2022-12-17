@@ -11,7 +11,7 @@ const container = document.createElement("div");
 // create the five article elements
 for (let i = 0; i < 5; i++) {
   const article = document.createElement("article");
-  article.classList.add("message");
+  article.className.add("message");
   container.appendChild(article);
 }
 
